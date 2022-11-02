@@ -54,7 +54,12 @@ bottomDropdown.addEventListener('change', (e) => {
     // update the stats to show the new count (call displayStats() to do this work)
 });
 
-catchphraseButton.addEventListener('click', () => {
+catchphraseButton.addEventListener('click', (e) => {
+    const value = e.target.value;
+    catchphrases.push(catchphraseInput.value);
+    catchphraseInput.value = '';
+    displayCatchphrases();
+
     // get the value of the catchphrase input
     // push the new catchphrase to the catchphrase array in state
     // clear out the form input's value so it's empty to the user
