@@ -31,8 +31,13 @@ headDropdown.addEventListener("change", (e) => {
   // update the stats to show the new count (call displayStats() to do this work)
 });
 
-middleDropdown.addEventListener("change", () => {
-  // get the value of the middle dropdown
+middleDropdown.addEventListener("change", (e) => {
+  const value = e.target.value;
+  middleCounter++;
+  middleEl.style.backgroundImage = `url("./assets/${value}-middle.png")`;
+  displayStats();
+
+  // get the val  const value = e.target.value;
   // increment the middle change count state
   // update the dom for the middle (NOTE: use style.backgroundImage on the middleEl div instead of trying to set the .src -- it's NOT an img tag!)
   // update the stats to show the new count (call displayStats() to do this work)
